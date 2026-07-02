@@ -33,7 +33,7 @@ export function SignupForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <FormField label="Full name" htmlFor="name" error={errors.name}>
         <Input
           id="name"
