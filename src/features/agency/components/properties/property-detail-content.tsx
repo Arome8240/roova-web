@@ -1,10 +1,12 @@
 "use client";
 
 import { AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import { Building2 } from "lucide-react";
 import { ChartContainer } from "@/components/charts/chart-container";
 import { ChartTooltip } from "@/components/charts/chart-tooltip";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ErrorState } from "@/components/shared/error-state";
+import { EmptyState } from "@/components/shared/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useProperty } from "@/features/agency/queries";
@@ -33,7 +35,15 @@ export function PropertyDetailContent({ id }: { id: string }) {
   }
 
   if (isError) return <ErrorState onRetry={() => refetch()} />;
-  if (!data) return null;
+  if (!data) {
+    return (
+      <EmptyState
+        icon={Building2}
+        title="Property not found"
+        description="This listing doesn't exist or may have been removed."
+      />
+    );
+  }
 
   const { property, investors } = data;
   const percent =
