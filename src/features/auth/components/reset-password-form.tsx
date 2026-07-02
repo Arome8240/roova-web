@@ -27,7 +27,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="space-y-5">
       {errors.token && <p className="text-sm text-red-600">{errors.token}</p>}
 
       <FormField label="New password" htmlFor="password" error={errors.password}>
