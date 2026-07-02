@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { FadeIn } from "@/components/shared/fade-in";
 import { PropertyCard } from "@/features/landing/components/property-card";
 import { heroProperty } from "@/features/landing/data";
@@ -24,7 +25,9 @@ export function Hero() {
         </p>
 
         <div className="flex flex-wrap items-center gap-3">
-          <Button size="lg">Start investing</Button>
+          <Link href="/signup" className={buttonVariants({ size: "lg" })}>
+            Start investing
+          </Link>
           <Button size="lg" variant="outline">
             List a property
           </Button>

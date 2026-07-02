@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 const NAV_LINKS = [
   { href: "#how-it-works", label: "How it works" },
@@ -29,10 +29,15 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link href="#login" className="hidden text-sm font-medium text-foreground/80 hover:text-foreground sm:inline">
+          <Link
+            href="/login"
+            className="hidden text-sm font-medium text-foreground/80 hover:text-foreground sm:inline"
+          >
             Log in
           </Link>
-          <Button size="sm">Start investing</Button>
+          <Link href="/signup" className={buttonVariants({ size: "sm" })}>
+            Start investing
+          </Link>
         </div>
       </div>
     </header>
