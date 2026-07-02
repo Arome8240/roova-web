@@ -8,7 +8,7 @@ export function HowItWorks() {
         <p className="text-xs font-medium tracking-wider text-primary uppercase">
           How it works
         </p>
-        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-medium tracking-[-0.02em] text-foreground sm:text-4xl">
           Three steps to property ownership
         </h2>
       </FadeIn>
@@ -16,11 +16,11 @@ export function HowItWorks() {
       <div className="mt-12 grid gap-6 sm:grid-cols-3">
         {howItWorksSteps.map((item, index) => (
           <FadeIn key={item.step} delay={index * 0.08}>
-            <div className="h-full rounded-2xl bg-card p-6 shadow-sm">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-muted font-semibold text-foreground">
+            <div className="shadow-soft h-full rounded-2xl bg-card p-6">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-muted font-medium text-foreground">
                 {item.step}
               </span>
-              <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
+              <h3 className="mt-4 font-medium text-foreground">{item.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
             </div>
           </FadeIn>

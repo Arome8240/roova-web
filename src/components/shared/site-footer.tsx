@@ -34,11 +34,11 @@ const LEGAL_LINKS = ["Terms", "Privacy", "Risk disclosure", "Cookies"];
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/60 bg-background">
+    <footer className="shadow-ring bg-background">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" className="text-xl font-semibold text-foreground">
+            <Link href="/" className="text-xl font-medium tracking-[-0.01em] text-foreground">
               roova<span className="text-primary">.</span>
             </Link>
             <p className="mt-3 max-w-xs text-sm text-muted-foreground">
@@ -48,7 +48,7 @@ export function SiteFooter() {
 
           {FOOTER_COLUMNS.map((column) => (
             <div key={column.title}>
-              <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+              <h3 className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
                 {column.title}
               </h3>
               <ul className="mt-4 space-y-3">

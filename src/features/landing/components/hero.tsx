@@ -13,7 +13,7 @@ export function Hero() {
           Fractional ownership
         </Badge>
 
-        <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <h1 className="text-4xl font-medium tracking-[-0.025em] text-foreground sm:text-5xl">
           Own a piece of Lagos for ₦50,000
         </h1>
 

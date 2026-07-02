@@ -12,7 +12,7 @@ export function ForAgencies() {
           <p className="text-xs font-medium tracking-wider text-primary uppercase">
             For agencies
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-medium tracking-[-0.02em] sm:text-4xl">
             Are you a real estate agency?
           </h2>
           <p className="max-w-lg text-accent-foreground/70">
@@ -27,10 +27,10 @@ export function ForAgencies() {
 
         <FadeIn delay={0.1} className="grid grid-cols-2 gap-4">
           {agencyStats.map((stat) => (
-            <div key={stat.label} className="rounded-2xl bg-accent-foreground/5 p-5">
+            <div key={stat.label} className="rounded-3xl bg-accent-foreground/5 p-6">
               <p
                 className={cn(
-                  "text-2xl font-semibold",
+                  "text-2xl font-medium tracking-[-0.02em]",
                   stat.accent ? "text-success" : "text-accent-foreground",
                 )}
               >

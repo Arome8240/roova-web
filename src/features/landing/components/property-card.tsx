@@ -17,7 +17,7 @@ export function PropertyCard({
   const percentFunded = Math.round((property.raised / property.target) * 100);
 
   return (
-    <div className="overflow-hidden rounded-2xl bg-card shadow-lg shadow-foreground/5">
+    <div className="shadow-soft overflow-hidden rounded-3xl bg-card">
       <div
         className={cn(
           "relative flex items-center justify-center bg-gradient-to-br from-primary to-accent",
@@ -42,7 +42,12 @@ export function PropertyCard({
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
             {property.location}
           </p>
-          <h3 className={cn("mt-1 font-semibold text-foreground", isHero ? "text-xl" : "text-lg")}>
+          <h3
+            className={cn(
+              "mt-1 font-medium tracking-[-0.01em] text-foreground",
+              isHero ? "text-xl" : "text-lg",
+            )}
+          >
             {property.title}
           </h3>
           <p className="mt-0.5 text-sm text-muted-foreground">
@@ -67,7 +72,7 @@ export function PropertyCard({
         <div className="flex items-center justify-between border-t border-border pt-4">
           <div>
             <p className="text-xs tracking-wide text-muted-foreground uppercase">Share price</p>
-            <p className="font-semibold text-foreground">{formatNairaFull(property.sharePrice)}</p>
+            <p className="font-medium text-foreground">{formatNairaFull(property.sharePrice)}</p>
           </div>
           <Button size={isHero ? "md" : "sm"}>
             {isHero ? `Invest from ${formatNairaFull(property.sharePrice)}` : "Invest now"}

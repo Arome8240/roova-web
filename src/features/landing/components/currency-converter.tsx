@@ -20,8 +20,8 @@ export function CurrencyConverter() {
   const shares = Math.floor(nairaAmount / SHARE_PRICE);
 
   return (
-    <div className="rounded-2xl bg-card p-6 shadow-lg shadow-foreground/5">
-      <h3 className="font-semibold text-foreground">Currency converter</h3>
+    <div className="shadow-soft rounded-3xl bg-card p-6">
+      <h3 className="font-medium tracking-[-0.01em] text-foreground">Currency converter</h3>
       <p className="mt-1 text-sm text-muted-foreground">
         See how many shares your money buys today.
       </p>
@@ -45,7 +45,7 @@ export function CurrencyConverter() {
           <p className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
             You invest
           </p>
-          <p className="text-lg font-semibold text-foreground">
+          <p className="text-lg font-medium text-foreground">
             {currency.symbol}
             {amount.toLocaleString("en-NG")}
           </p>
@@ -61,11 +61,11 @@ export function CurrencyConverter() {
 
       <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
         <p className="text-sm text-muted-foreground">In naira</p>
-        <p className="font-semibold text-foreground">{formatNairaCompact(nairaAmount)}</p>
+        <p className="font-medium text-foreground">{formatNairaCompact(nairaAmount)}</p>
       </div>
       <div className="mt-2 flex items-center justify-between">
         <p className="text-sm text-muted-foreground">Shares at ₦50,000</p>
-        <p className="font-semibold text-success">{shares} shares</p>
+        <p className="font-medium text-success">{shares} shares</p>
       </div>
 
       <p className="mt-4 text-xs text-muted-foreground">

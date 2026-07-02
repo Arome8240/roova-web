@@ -4,7 +4,7 @@ import { diasporaFlags } from "@/features/landing/data";
 
 function StoreBadge({ eyebrow, name }: { eyebrow: string; name: string }) {
   return (
-    <button className="flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-left text-accent-foreground transition-colors hover:bg-accent/90">
+    <button className="flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-left text-accent-foreground transition-colors hover:bg-accent/90">
       <span className="flex flex-col leading-tight">
         <span className="text-[10px] text-accent-foreground/70">{eyebrow}</span>
         <span className="text-sm font-medium">{name}</span>
@@ -21,7 +21,7 @@ export function Diaspora() {
           <p className="text-xs font-medium tracking-wider text-primary uppercase">
             For the diaspora
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-3xl font-medium tracking-[-0.02em] text-foreground sm:text-4xl">
             Invest in Nigeria from anywhere
           </h2>
           <p className="max-w-lg text-muted-foreground">
