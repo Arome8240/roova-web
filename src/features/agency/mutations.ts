@@ -3,6 +3,7 @@ import {
   markNotificationRead,
   markAllNotificationsRead,
   updateAgencySettings,
+  createProperty,
 } from "@/features/agency/api";
 import { agencyKeys } from "@/features/agency/queries";
 import { notify } from "@/lib/toast";
@@ -56,5 +57,19 @@ export function useUpdateAgencySettings() {
     mutationFn: updateAgencySettings,
     onSuccess: () => notify.success("Settings saved."),
     onError: () => notify.error("Couldn't save your settings. Please try again."),
+  });
+}
+
+export function useCreateProperty() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: createProperty,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: agencyKeys.properties() });
+      queryClient.invalidateQueries({ queryKey: agencyKeys.overview() });
+      notify.success("Listing created — it's saved as a draft.");
+    },
+    onError: () => notify.error("Couldn't create the listing. Please try again."),
   });
 }

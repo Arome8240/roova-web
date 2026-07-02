@@ -19,6 +19,26 @@ export const agencyPropertySchema = z.object({
 });
 export type AgencyProperty = z.infer<typeof agencyPropertySchema>;
 
+export const propertyTierSchema = z.enum(["Gold tier", "Silver tier"]);
+export type PropertyTier = z.infer<typeof propertyTierSchema>;
+
+export const createPropertyInputSchema = z.object({
+  title: z.string().min(3, "Enter a property name"),
+  location: z.string().min(2, "Enter a location"),
+  tier: propertyTierSchema,
+  target: z.coerce.number().positive("Enter a funding target greater than zero"),
+  sharePrice: z.coerce.number().positive("Share price must be greater than zero"),
+  yieldPct: z.coerce
+    .number()
+    .positive("Enter a projected annual yield")
+    .max(100, "Enter a realistic percentage"),
+  daysRemaining: z.coerce
+    .number()
+    .int("Enter a whole number of days")
+    .positive("Enter the funding window in days"),
+});
+export type CreatePropertyInput = z.infer<typeof createPropertyInputSchema>;
+
 export const overviewStatsSchema = z.object({
   totalRaised: z.number(),
   activeListings: z.number(),

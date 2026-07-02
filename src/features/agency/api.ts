@@ -10,6 +10,8 @@ import {
   notificationSchema,
   agencySettingsSchema,
   type AgencySettings,
+  type AgencyProperty,
+  type CreatePropertyInput,
 } from "@/features/agency/schemas";
 import {
   overviewStats,
@@ -76,6 +78,44 @@ export async function markAllNotificationsRead() {
     n.read = true;
   });
   return simulateNetwork({ ok: true as const }, 250);
+}
+
+function slugify(title: string) {
+  const base = title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+  let id = base;
+  let suffix = 2;
+  while (properties.some((p) => p.id === id)) {
+    id = `${base}-${suffix}`;
+    suffix += 1;
+  }
+  return id;
+}
+
+export async function createProperty(input: CreatePropertyInput): Promise<AgencyProperty> {
+  const property: AgencyProperty = {
+    id: slugify(input.title),
+    location: input.location,
+    title: input.title,
+    tier: input.tier,
+    status: "draft",
+    yieldPct: input.yieldPct,
+    raised: 0,
+    target: input.target,
+    investors: 0,
+    daysRemaining: input.daysRemaining,
+    sharePrice: input.sharePrice,
+    createdAt: new Date().toISOString().slice(0, 10),
+  };
+
+  properties.unshift(property);
+
+  const res = await simulateNetwork(property);
+  return agencyPropertySchema.parse(res);
 }
 
 export async function getAgencySettings() {
