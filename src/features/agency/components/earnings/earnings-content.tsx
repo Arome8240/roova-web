@@ -42,7 +42,12 @@ export function EarningsContent() {
                   content={<ChartTooltip formatValue={(v) => formatNairaCompact(Number(v))} />}
                   cursor={{ fill: "var(--color-muted)" }}
                 />
-                <Bar dataKey="commission" fill="var(--color-primary)" radius={[6, 6, 0, 0]} />
+                <Bar
+                  dataKey="commission"
+                  fill="var(--color-primary)"
+                  radius={[6, 6, 0, 0]}
+                  isAnimationActive={false}
+                />
               </BarChart>
             </ChartContainer>
           )}

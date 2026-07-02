@@ -117,6 +117,7 @@ export function PropertyDetailContent({ id }: { id: string }) {
                   fill="var(--color-primary)"
                   fillOpacity={0.12}
                   strokeWidth={2}
+                  isAnimationActive={false}
                 />
               </AreaChart>
             </ChartContainer>

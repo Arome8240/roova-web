@@ -83,6 +83,7 @@ export function OverviewContent() {
                   fill="var(--color-primary)"
                   fillOpacity={0.12}
                   strokeWidth={2}
+                  isAnimationActive={false}
                 />
               </AreaChart>
             </ChartContainer>
