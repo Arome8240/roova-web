@@ -1,0 +1,22 @@
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const badgeVariants = cva(
+  "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium",
+  {
+    variants: {
+      variant: {
+        success: "bg-success text-white",
+        surface: "bg-card text-foreground shadow-sm",
+        outline: "border border-border bg-background/70 text-foreground",
+      },
+    },
+    defaultVariants: { variant: "surface" },
+  },
+);
+
+type BadgeProps = React.ComponentProps<"span"> & VariantProps<typeof badgeVariants>;
+
+export function Badge({ className, variant, ...props }: BadgeProps) {
+  return <span className={cn(badgeVariants({ variant }), className)} {...props} />;
+}
