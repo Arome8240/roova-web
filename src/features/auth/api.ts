@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { simulateNetwork } from "@/lib/simulate";
 import type {
   LoginInput,
   SignupInput,
@@ -13,10 +14,6 @@ const authResponseSchema = z.object({
 export type AuthResponse = z.infer<typeof authResponseSchema>;
 
 const okResponseSchema = z.object({ ok: z.literal(true) });
-
-function simulateNetwork<T>(payload: T, delay = 600): Promise<T> {
-  return new Promise((resolve) => setTimeout(() => resolve(payload), delay));
-}
 
 export async function login(input: LoginInput): Promise<AuthResponse> {
   const res = await simulateNetwork({ userId: "usr_demo", email: input.email });
