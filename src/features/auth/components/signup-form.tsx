@@ -29,7 +29,7 @@ export function SignupForm() {
       return;
     }
     setErrors({});
-    signup.mutate(result.data, { onSuccess: () => router.push("/") });
+    signup.mutate(result.data, { onSuccess: () => router.push("/agency") });
   }
 
   return (

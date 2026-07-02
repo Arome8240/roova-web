@@ -16,7 +16,7 @@ const FOOTER_COLUMNS = [
       { href: "#agencies", label: "Apply to list" },
       { href: "#", label: "Commission & fees" },
       { href: "#", label: "Gold tier" },
-      { href: "#", label: "Agency dashboard" },
+      { href: "/agency", label: "Agency dashboard" },
     ],
   },
   {

@@ -26,7 +26,7 @@ export function LoginForm() {
       return;
     }
     setErrors({});
-    login.mutate(result.data, { onSuccess: () => router.push("/") });
+    login.mutate(result.data, { onSuccess: () => router.push("/agency") });
   }
 
   return (
