@@ -7,7 +7,7 @@ const FOOTER_COLUMNS = [
     links: [
       { href: "#properties", label: "Browse properties" },
       { href: "#how-it-works", label: "How it works" },
-      { href: "#", label: "Secondary market" },
+      { href: "/secondary-market", label: "Secondary market" },
       { href: "#diaspora", label: "Diaspora investing" },
     ],
   },
@@ -15,23 +15,28 @@ const FOOTER_COLUMNS = [
     title: "Agencies",
     links: [
       { href: "#agencies", label: "Apply to list" },
-      { href: "#", label: "Commission & fees" },
-      { href: "#", label: "Gold tier" },
+      { href: "/fees", label: "Commission & fees" },
+      { href: "/tiers", label: "Gold tier" },
       { href: AGENCY_URL, label: "Agency dashboard" },
     ],
   },
   {
     title: "Company",
     links: [
-      { href: "#", label: "About" },
-      { href: "#", label: "Regulation & security" },
-      { href: "#", label: "Help centre" },
-      { href: "#", label: "Contact" },
+      { href: "/about", label: "About" },
+      { href: "/regulation", label: "Regulation & security" },
+      { href: "/help", label: "Help centre" },
+      { href: "/contact", label: "Contact" },
     ],
   },
 ];
 
-const LEGAL_LINKS = ["Terms", "Privacy", "Risk disclosure", "Cookies"];
+const LEGAL_LINKS = [
+  { href: "/terms", label: "Terms" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/risk-disclosure", label: "Risk disclosure" },
+  { href: "/cookies", label: "Cookies" },
+];
 
 export function SiteFooter() {
   return (
@@ -80,9 +85,13 @@ export function SiteFooter() {
           <div className="mt-6 flex flex-col gap-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <span>&copy; 2026 Roova Technologies Ltd. All rights reserved.</span>
             <div className="flex gap-6">
-              {LEGAL_LINKS.map((label) => (
-                <Link key={label} href="#" className="transition-colors hover:text-foreground">
-                  {label}
+              {LEGAL_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="transition-colors hover:text-foreground"
+                >
+                  {link.label}
                 </Link>
               ))}
             </div>
