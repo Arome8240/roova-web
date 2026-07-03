@@ -10,6 +10,7 @@ const badgeVariants = cva(
         surface: "bg-card text-foreground shadow-soft",
         outline: "shadow-ring bg-background/70 text-foreground",
         primary: "bg-primary/10 text-primary",
+        destructive: "bg-red-50 text-red-600",
       },
     },
     defaultVariants: { variant: "surface" },
