@@ -1,0 +1,136 @@
+import type { MarketplaceListing, PurchaseOffer } from "@/features/marketplace/schemas";
+
+export const listings: MarketplaceListing[] = [
+  {
+    id: "lekki-duplex",
+    title: "4-Bedroom Detached Duplex",
+    location: "Lekki, Lagos",
+    agencyName: "Adunni Properties",
+    price: 85_000_000,
+    bedrooms: 4,
+    bathrooms: 5,
+    description:
+      "A modern detached duplex in a gated Lekki estate, with a fitted kitchen, BQ, and 24-hour estate security.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+    status: "live",
+    allowsInstallment: true,
+    downPaymentPct: 20,
+    installmentMonths: [12, 24],
+    submittedAt: "2026-05-01",
+  },
+  {
+    id: "ikeja-terrace",
+    title: "3-Bedroom Terrace House",
+    location: "Ikeja, Lagos",
+    agencyName: "Prime Realty NG",
+    price: 45_000_000,
+    bedrooms: 3,
+    bathrooms: 3,
+    description:
+      "A well-finished terrace house close to the airport road, ideal for a young family or rental income.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
+    status: "live",
+    allowsInstallment: true,
+    downPaymentPct: 15,
+    installmentMonths: [6, 12],
+    submittedAt: "2026-05-10",
+  },
+  {
+    id: "maitama-mansion",
+    title: "5-Bedroom Fully Detached Mansion",
+    location: "Maitama, Abuja",
+    agencyName: "Capital Estates Ltd",
+    price: 180_000_000,
+    bedrooms: 5,
+    bathrooms: 6,
+    description:
+      "An executive mansion in Maitama with a private pool, staff quarters, and a two-car garage.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80",
+    status: "live",
+    allowsInstallment: true,
+    downPaymentPct: 30,
+    installmentMonths: [24],
+    submittedAt: "2026-04-20",
+  },
+  {
+    id: "yaba-apartment",
+    title: "2-Bedroom Apartment",
+    location: "Yaba, Lagos",
+    agencyName: "Sterling Heights Realty",
+    price: 28_000_000,
+    bedrooms: 2,
+    bathrooms: 2,
+    description:
+      "A compact, well-located apartment in Yaba, walking distance from the tech hub and university.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    status: "live",
+    allowsInstallment: false,
+    downPaymentPct: 0,
+    installmentMonths: [],
+    submittedAt: "2026-05-15",
+  },
+  {
+    id: "ajah-semi-duplex",
+    title: "4-Bedroom Semi-Detached Duplex",
+    location: "Ajah, Lagos",
+    agencyName: "Adunni Properties",
+    price: 52_000_000,
+    bedrooms: 4,
+    bathrooms: 4,
+    description:
+      "A newly built semi-detached duplex in a fast-growing Ajah neighbourhood, close to the Lekki-Epe expressway.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80",
+    status: "pending",
+    allowsInstallment: true,
+    downPaymentPct: 20,
+    installmentMonths: [12, 24],
+    submittedAt: "2026-07-01",
+  },
+  {
+    id: "epe-bungalow",
+    title: "3-Bedroom Bungalow",
+    location: "Epe, Lagos",
+    agencyName: "Capital Estates Ltd",
+    price: 32_000_000,
+    bedrooms: 3,
+    bathrooms: 2,
+    description: "A cosy bungalow on a large plot in Epe, recently sold to a returning diaspora buyer.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
+    status: "sold",
+    allowsInstallment: true,
+    downPaymentPct: 20,
+    installmentMonths: [12],
+    submittedAt: "2026-03-10",
+  },
+];
+
+export const purchaseOffers: PurchaseOffer[] = [
+  {
+    id: "offer_1",
+    listingId: "lekki-duplex",
+    listingTitle: "4-Bedroom Detached Duplex",
+    buyerName: "Chidinma Okafor",
+    buyerEmail: "chidinma.okafor@example.com",
+    buyerPhone: "+234 802 111 2222",
+    paymentPlan: "installment",
+    installmentMonths: 24,
+    submittedAt: "2026-06-28",
+  },
+  {
+    id: "offer_2",
+    listingId: "ikeja-terrace",
+    listingTitle: "3-Bedroom Terrace House",
+    buyerName: "Tunde Bakare",
+    buyerEmail: "tunde.bakare@example.com",
+    buyerPhone: "+234 803 222 3333",
+    paymentPlan: "full",
+    installmentMonths: null,
+    submittedAt: "2026-06-25",
+  },
+];
