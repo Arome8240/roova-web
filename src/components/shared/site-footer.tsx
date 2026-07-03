@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AGENCY_URL } from "@/lib/urls";
 
 const FOOTER_COLUMNS = [
   {
@@ -16,7 +17,7 @@ const FOOTER_COLUMNS = [
       { href: "#agencies", label: "Apply to list" },
       { href: "#", label: "Commission & fees" },
       { href: "#", label: "Gold tier" },
-      { href: "/agency", label: "Agency dashboard" },
+      { href: AGENCY_URL, label: "Agency dashboard" },
     ],
   },
   {
