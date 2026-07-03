@@ -9,6 +9,7 @@ export type Property = {
   investors: number;
   daysRemaining: number;
   sharePrice: number;
+  imageUrl: string;
   editorsPick?: boolean;
 };
 
@@ -23,6 +24,8 @@ export const heroProperty: Property = {
   investors: 39,
   daysRemaining: 4,
   sharePrice: 50_000,
+  imageUrl:
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
   editorsPick: true,
 };
 
@@ -38,6 +41,8 @@ export const featuredProperties: Property[] = [
     investors: 64,
     daysRemaining: 9,
     sharePrice: 50_000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
   },
   {
     location: "Maitama, Abuja",
@@ -50,6 +55,8 @@ export const featuredProperties: Property[] = [
     investors: 41,
     daysRemaining: 18,
     sharePrice: 50_000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80",
   },
   {
     location: "Ikoyi, Lagos",
@@ -62,6 +69,8 @@ export const featuredProperties: Property[] = [
     investors: 88,
     daysRemaining: 2,
     sharePrice: 50_000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=900&q=80",
   },
 ];
 

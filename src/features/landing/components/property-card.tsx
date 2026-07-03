@@ -1,4 +1,5 @@
-import { Building2, Star } from "lucide-react";
+import Image from "next/image";
+import { Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -20,11 +21,18 @@ export function PropertyCard({
     <div className="shadow-soft overflow-hidden rounded-3xl bg-card">
       <div
         className={cn(
-          "relative flex items-center justify-center bg-gradient-to-br from-primary to-accent",
+          "relative overflow-hidden bg-linear-to-br from-primary to-accent",
           isHero ? "h-56" : "h-40",
         )}
       >
-        <Building2 className="h-10 w-10 text-primary-foreground/30" strokeWidth={1.5} />
+        <Image
+          src={property.imageUrl}
+          alt={property.title}
+          fill
+          priority={isHero}
+          sizes={isHero ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
+          className="object-cover"
+        />
 
         <Badge variant="success" className="absolute top-3 left-3">
           {property.yieldPct}% annual yield
