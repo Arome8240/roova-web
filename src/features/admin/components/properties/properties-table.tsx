@@ -94,7 +94,7 @@ export function PropertiesTable() {
                     <tr key={property.id} className="border-b border-border last:border-0">
                       <td className="px-5 py-4">
                         <Link
-                          href={`/admin/properties/${property.id}`}
+                          href={`/properties/${property.id}`}
                           className="font-medium text-foreground hover:text-primary"
                         >
                           {property.title}

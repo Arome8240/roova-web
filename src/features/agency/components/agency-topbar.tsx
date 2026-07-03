@@ -68,7 +68,7 @@ export function AgencyTopbar() {
           </div>
 
           <Link
-            href="/agency/notifications"
+            href="/notifications"
             className="mt-1 block rounded-xl px-2 py-2 text-center text-sm font-medium text-primary hover:bg-foreground/5"
           >
             View all

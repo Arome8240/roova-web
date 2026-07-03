@@ -129,7 +129,7 @@ export function OverviewContent() {
           {pendingAgencies.map((agency) => (
             <Link
               key={agency.id}
-              href="/admin/agencies"
+              href="/agencies"
               className="flex items-center justify-between rounded-xl px-3 py-2.5 transition-colors hover:bg-foreground/5"
             >
               <div>
@@ -143,7 +143,7 @@ export function OverviewContent() {
           {pendingProperties.map((property) => (
             <Link
               key={property.id}
-              href={`/admin/properties/${property.id}`}
+              href={`/properties/${property.id}`}
               className="flex items-center justify-between rounded-xl px-3 py-2.5 transition-colors hover:bg-foreground/5"
             >
               <div>

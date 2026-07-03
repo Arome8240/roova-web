@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Building,
@@ -14,24 +14,24 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { notify } from "@/lib/toast";
+import { ROOT_URL } from "@/lib/urls";
 
 const NAV_ITEMS = [
-  { href: "/admin", label: "Overview", icon: LayoutDashboard },
-  { href: "/admin/agencies", label: "Agencies", icon: Building },
-  { href: "/admin/properties", label: "Properties", icon: Building2 },
-  { href: "/admin/investors", label: "Investors", icon: Users },
-  { href: "/admin/transactions", label: "Transactions", icon: Receipt },
-  { href: "/admin/notifications", label: "Notifications", icon: Bell },
-  { href: "/admin/settings", label: "Settings", icon: Settings },
+  { href: "/", label: "Overview", icon: LayoutDashboard },
+  { href: "/agencies", label: "Agencies", icon: Building },
+  { href: "/properties", label: "Properties", icon: Building2 },
+  { href: "/investors", label: "Investors", icon: Users },
+  { href: "/transactions", label: "Transactions", icon: Receipt },
+  { href: "/notifications", label: "Notifications", icon: Bell },
+  { href: "/settings", label: "Settings", icon: Settings },
 ];
 
 export function AdminSidebar() {
   const pathname = usePathname();
-  const router = useRouter();
 
   function handleLogout() {
     notify.success("Logged out.");
-    router.push("/");
+    window.location.href = ROOT_URL;
   }
 
   return (
@@ -43,7 +43,7 @@ export function AdminSidebar() {
       <nav className="mt-8 flex flex-1 flex-col gap-1">
         {NAV_ITEMS.map((item) => {
           const isActive =
-            item.href === "/admin" ? pathname === item.href : pathname.startsWith(item.href);
+            item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);
           return (
             <Link
               key={item.href}

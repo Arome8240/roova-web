@@ -15,7 +15,7 @@ export default function PropertiesPage() {
         title="Properties"
         subtitle="Manage your listings and track funding progress."
         action={
-          <Link href="/agency/properties/new" className={buttonVariants({ size: "sm" })}>
+          <Link href="/properties/new" className={buttonVariants({ size: "sm" })}>
             List a property
           </Link>
         }

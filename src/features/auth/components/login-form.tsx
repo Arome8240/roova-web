@@ -2,18 +2,17 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FormField } from "@/components/ui/form-field";
 import { firstFieldErrors } from "@/lib/utils";
+import { AGENCY_URL } from "@/lib/urls";
 import { useLogin } from "@/features/auth/mutations";
 import { loginSchema, type LoginInput } from "@/features/auth/schemas";
 
 export function LoginForm() {
-  const router = useRouter();
   const login = useLogin();
   const [values, setValues] = useState({ email: "", password: "", remember: false });
   const [errors, setErrors] = useState<Partial<Record<keyof LoginInput, string>>>({});
@@ -26,7 +25,7 @@ export function LoginForm() {
       return;
     }
     setErrors({});
-    login.mutate(result.data, { onSuccess: () => router.push("/agency") });
+    login.mutate(result.data, { onSuccess: () => (window.location.href = AGENCY_URL) });
   }
 
   return (

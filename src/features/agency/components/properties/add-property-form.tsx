@@ -45,7 +45,7 @@ export function AddPropertyForm() {
     }
     setErrors({});
     createProperty.mutate(result.data, {
-      onSuccess: (property) => router.push(`/agency/properties/${property.id}`),
+      onSuccess: (property) => router.push(`/properties/${property.id}`),
     });
   }
 
@@ -140,7 +140,7 @@ export function AddPropertyForm() {
         <Button
           type="button"
           variant="outline"
-          onClick={() => router.push("/agency/properties")}
+          onClick={() => router.push("/properties")}
         >
           Cancel
         </Button>

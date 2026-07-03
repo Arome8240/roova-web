@@ -1,26 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { LayoutDashboard, Building2, Wallet, Bell, Settings, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { notify } from "@/lib/toast";
+import { ROOT_URL } from "@/lib/urls";
 
 const NAV_ITEMS = [
-  { href: "/agency", label: "Overview", icon: LayoutDashboard },
-  { href: "/agency/properties", label: "Properties", icon: Building2 },
-  { href: "/agency/earnings", label: "Earnings", icon: Wallet },
-  { href: "/agency/notifications", label: "Notifications", icon: Bell },
-  { href: "/agency/settings", label: "Settings", icon: Settings },
+  { href: "/", label: "Overview", icon: LayoutDashboard },
+  { href: "/properties", label: "Properties", icon: Building2 },
+  { href: "/earnings", label: "Earnings", icon: Wallet },
+  { href: "/notifications", label: "Notifications", icon: Bell },
+  { href: "/settings", label: "Settings", icon: Settings },
 ];
 
 export function AgencySidebar() {
   const pathname = usePathname();
-  const router = useRouter();
 
   function handleLogout() {
     notify.success("Logged out.");
-    router.push("/");
+    window.location.href = ROOT_URL;
   }
 
   return (
@@ -32,7 +32,7 @@ export function AgencySidebar() {
       <nav className="mt-8 flex flex-1 flex-col gap-1">
         {NAV_ITEMS.map((item) => {
           const isActive =
-            item.href === "/agency" ? pathname === item.href : pathname.startsWith(item.href);
+            item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);
           return (
             <Link
               key={item.href}
