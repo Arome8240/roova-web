@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Building2, Wallet, Bell, Settings, LogOut } from "lucide-react";
+import { LayoutDashboard, Building2, Home, Wallet, Bell, Settings, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { notify } from "@/lib/toast";
 import { ROOT_URL } from "@/lib/urls";
@@ -10,6 +10,7 @@ import { ROOT_URL } from "@/lib/urls";
 const NAV_ITEMS = [
   { href: "/", label: "Overview", icon: LayoutDashboard },
   { href: "/properties", label: "Properties", icon: Building2 },
+  { href: "/marketplace", label: "Marketplace", icon: Home },
   { href: "/earnings", label: "Earnings", icon: Wallet },
   { href: "/notifications", label: "Notifications", icon: Bell },
   { href: "/settings", label: "Settings", icon: Settings },

@@ -6,6 +6,7 @@ const FOOTER_COLUMNS = [
     title: "Invest",
     links: [
       { href: "#properties", label: "Browse properties" },
+      { href: "/marketplace", label: "Marketplace" },
       { href: "#how-it-works", label: "How it works" },
       { href: "/secondary-market", label: "Secondary market" },
       { href: "#diaspora", label: "Diaspora investing" },
