@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const AGENCY_HOSTS = ["agency.roova.xyz", "agency.localhost:3000"];
-const ADMIN_HOSTS = ["admin.roova.xyz", "admin.localhost:3000"];
+const AGENCY_HOSTNAMES = ["agency.roova.xyz", "agency.localhost"];
+const ADMIN_HOSTNAMES = ["admin.roova.xyz", "admin.localhost"];
 
 export function proxy(request: NextRequest) {
-  const host = request.headers.get("host") ?? "";
+  // Strip the port so local dev matches regardless of which port the dev
+  // server actually bound to (3000 may be taken by something else).
+  const hostname = (request.headers.get("host") ?? "").split(":")[0];
 
-  const prefix = AGENCY_HOSTS.includes(host)
+  const prefix = AGENCY_HOSTNAMES.includes(hostname)
     ? "/agency"
-    : ADMIN_HOSTS.includes(host)
+    : ADMIN_HOSTNAMES.includes(hostname)
       ? "/admin"
       : null;
 
