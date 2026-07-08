@@ -8,7 +8,10 @@ export const metadata: Metadata = {
 
 export default function AgencySignupPage() {
   return (
-    <AuthCard title="Create your agency account" subtitle="List properties and manage funding rounds from one dashboard.">
+    <AuthCard
+      title="Create your agency account"
+      subtitle="List properties and manage funding rounds from one dashboard."
+    >
       <SignupForm redirectTo="/" />
     </AuthCard>
   );
