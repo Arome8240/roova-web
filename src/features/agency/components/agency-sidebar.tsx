@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { LayoutDashboard, Building2, Home, Wallet, Bell, Settings, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { notify } from "@/lib/toast";
-import { ROOT_URL } from "@/lib/urls";
 
 const NAV_ITEMS = [
   { href: "/", label: "Overview", icon: LayoutDashboard },
@@ -18,10 +17,11 @@ const NAV_ITEMS = [
 
 export function AgencySidebar() {
   const pathname = usePathname();
+  const router = useRouter();
 
   function handleLogout() {
     notify.success("Logged out.");
-    window.location.href = ROOT_URL;
+    router.push("/login");
   }
 
   return (
