@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FormField } from "@/components/ui/form-field";
@@ -10,7 +11,8 @@ import { AGENCY_URL } from "@/lib/urls";
 import { useSignup } from "@/features/auth/mutations";
 import { signupSchema, type SignupInput } from "@/features/auth/schemas";
 
-export function SignupForm() {
+export function SignupForm({ redirectTo }: { redirectTo?: string }) {
+  const router = useRouter();
   const signup = useSignup();
   const [values, setValues] = useState({
     name: "",
@@ -28,7 +30,9 @@ export function SignupForm() {
       return;
     }
     setErrors({});
-    signup.mutate(result.data, { onSuccess: () => (window.location.href = AGENCY_URL) });
+    signup.mutate(result.data, {
+      onSuccess: () => (redirectTo ? router.push(redirectTo) : (window.location.href = AGENCY_URL)),
+    });
   }
 
   return (
